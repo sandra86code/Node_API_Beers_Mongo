@@ -1,0 +1,30 @@
+{
+  "name": "cervezas",
+  "version": "1.0.0",
+  "description": "Express example server",
+  "main": "app.js",
+  "scripts": {
+    "start:dev": "DEBUG=app:* nodemon app.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "./data/*"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joadelvia/cervezas.git"
+  },
+  "author": "joadelvia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joadelvia/cervezas/issues"
+  },
+  "homepage": "https://github.com/joadelvia/cervezas#readme",
+  "dependencies": {
+    "diskdb": "^0.1.17",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.1"
+  }
+}
