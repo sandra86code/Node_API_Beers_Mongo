@@ -1,1 +1,19 @@
-[]
+[
+    {
+        "Nombre":"Kulas-Heller",
+        "Direccion":"17 Valley Edge Court",
+        "Ciudad":"Stockholm",
+        "Telefono":"9621230835"
+    },{
+        "Nombre":"Cummings-Schulist",
+        "Direccion":"81722 Porter Hill",
+        "Ciudad":"Luxor",
+        "Telefono":"4573538699"
+        
+    },{
+        "Nombre":"Stamm-Christiansen",
+        "Direccion":"22995 John Wall Hill",
+        "Ciudad":"Laba Goumen",
+        "Telefono":"3471271513"
+    }
+]
