@@ -91,13 +91,13 @@ async function editBar(req = request, res = response){
     if (updatedBar.length) {
         const barNameDB = await Bar.find({ Nombre: bar.Nombre });
         const barAddressDB = await Bar.find({ Direccion: bar.Direccion });
-        if(barNameDB.length) {
+        if(barNameDB.length && (updatedBar[0].Nombre !== bar.Nombre)) {
             res.json({ message: 'Nombre ya registrado' });
         }else if(bar.Nombre===undefined) {
             res.json({ message: 'Nombre es obligatoria.' });
         }else if(bar.Nombre.trim().length<2 || bar.Nombre.trim().length>25) {
             res.json({ message: 'El nombre del bar debe estar entre 2 y 25 caracteres.' });
-        }else if(barAddressDB.length) {
+        }else if(barAddressDB.length && (updatedBar[0].Direccion !== bar.Direccion)) {
             res.json({ message: 'Direccion ya registrada' });
         }else if(bar.Direccion===undefined) {
             res.json({ message: 'Direccion es obligatoria.' });

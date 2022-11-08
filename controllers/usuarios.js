@@ -108,7 +108,7 @@ async function editUser(req = request, res = response){
         const userEmailDB = await User.find({ Email: user.Email });
         if(user.Nick===undefined) {
             res.json({ message: 'Nick obligatorio.' });
-        }else if(userNickDB.length) {
+        }else if(userNickDB.length && (updatedUser[0].Nick !== user.Nick)) {
             res.json({ message: 'Nick ya registrado.' });
         }else if(user.Nick.trim().length<3 || user.Nick.trim().length>25) {
             res.json({ message: 'El nick del usuario debe estar entre 3 y 25 caracteres.' });
@@ -116,7 +116,7 @@ async function editUser(req = request, res = response){
             res.json({ message: 'Password obligatorio.' });
         }else if(user.Password.trim().length<5 || user.Password.trim().length>35) {
             res.json({ message: 'La contraseña del usuario debe estar entre 5 y 35 caracteres.' });
-        }else if(userEmailDB.length) {
+        }else if(userEmailDB.length && (updatedUser[0].Email !== user.Email)) {
             res.json({ message: 'Email ya registrado' });
         }else if(user.Email===undefined) {
             res.json({ message: 'Email obligatorio.' });

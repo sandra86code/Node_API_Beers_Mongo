@@ -96,7 +96,7 @@ async function editBeer(req = request, res = response) {
     const updatedBeer = await Cerveza.find({ _id: beerId });
     if (updatedBeer.length) {
         const beerNameDB = await Cerveza.find({ Nombre: beer.Nombre });
-        if(beerNameDB.length) {
+        if(beerNameDB.length && (updatedBeer[0].Nombre !== beer.Nombre)) {
             res.json({ message: 'Nombre ya registrado' });
         }else if(beer.Nombre===undefined) {
             res.json({ message: 'Nombre obligatorio.' });
