@@ -89,7 +89,7 @@ async function deleteBeer(req = request, res = response) {
         res.json({ message: `La cerveza con id ${beerId} no existe` })
     }
 }
-
+//Metodo para editar una cerveza a partir de su id
 async function editBeer(req = request, res = response) {
     const beerId = req.params.id;
     const beer = req.body;

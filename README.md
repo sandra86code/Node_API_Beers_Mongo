@@ -1,1 +1,1 @@
-# Simple REST API with Express and diskdb
+# Simple REST API with Express and Mongo

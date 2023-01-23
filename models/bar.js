@@ -21,3 +21,4 @@ const BarSchema = Schema({
 });
 
 module.exports = model( 'Bar', BarSchema );
+
